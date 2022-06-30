@@ -1,14 +1,17 @@
 import React from 'react'
+import { useState } from 'react'
+import { useEffect } from 'react'
 import { useFilterContext } from '../context/FilterContext'
 import Card from './Card'
 
 const ListCards = () => {
 
   const { dataFiltered, filters } = useFilterContext()
+ 
 
   return (
     <ul className={filters ? "cardContainerWithFilters" : "cardContainer"}>
-    {dataFiltered &&
+    {dataFiltered != null &&
       dataFiltered.map((element, index)=>{
 
         return(

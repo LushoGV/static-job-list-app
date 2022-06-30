@@ -57,9 +57,9 @@ export const FilterProvider = ({ children }) => {
     clearFilters,
   };
 
-  useEffect(() => {
-    filterData();
-  }, [filters]);
+  useEffect(()=>{
+    filterData()
+  },[filters])
 
   return (
     <FilterContext.Provider value={FilterContent}>
