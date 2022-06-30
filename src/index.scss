@@ -1,0 +1,328 @@
+@use './scss/abstracts/mixins';
+@use './scss/abstracts/variables';
+@use './scss/base/base';
+@use './scss/base/resets';
+
+$colorPrimario:  hsl(180, 29%, 50%);
+$colorSecundario: hsl(180, 14%, 20%);
+$fondoClaro: hsl(180, 8%, 52%);
+$back: hsl(180, 52%, 96%);
+$FilterTablets: hsl(180, 31%, 95%);
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  font-family: 'League Spartan', sans-serif;
+  font-size: 15px;
+  background: $back;
+}
+
+button{
+  font-size: 14px;
+}
+
+main, header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header{
+  height: 100px;
+  position: relative;
+  background-image:url(banner.png);
+}
+
+.navFilters{
+  max-width: 1000px;
+  width: 80%;
+  background: #ffff;
+  position: absolute;
+  top: 70px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 3.4px 22px -10px $colorPrimario;
+  border-radius: 4px;
+}
+
+.navFilters ul{
+  list-style: none;
+  padding: 10px 10px 10px 25px;
+  margin: 5px;
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+.navFilters .filter{
+  display: flex;
+  align-items: center;
+  margin: 0 8px 0 0;
+  padding: 1px 0 1px 5px;
+}
+
+.navFilters .filter:hover{
+  cursor: auto;
+  background: $FilterTablets;
+  color: $colorPrimario;
+}
+
+.navFilters .filter:hover > button{
+  background: $colorSecundario;
+  cursor: pointer;
+}
+
+.filter button{
+  width: 26px;
+  height: 26px;
+  border: none;
+  background: $colorPrimario;
+  color: #ffff;
+  margin: 0 0 0 6px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  font-weight: 700;
+}
+
+.clear{
+  padding: 10px 25px 10px;
+  margin: 5px;
+  background: transparent;
+  border: none;
+  color: $colorPrimario;
+  font-weight: 700;
+}
+
+.clear:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.clear::first-letter{
+  text-transform: uppercase;
+}
+
+
+//------------------------------------MAIN----------------------------------------------
+
+.cardContainer, .cardContainerWithFilters{
+  max-width: 1000px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 40px 0;
+}
+
+hr{
+  display: none;
+}
+
+.card, .cardFeatured{
+  background: #ffff;
+  padding: 20px 25px;
+  margin: 0 0 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 0px 3.4px 22px -10px $colorPrimario;
+  
+}
+
+.cardFeatured{
+  border-left: 4px solid $colorPrimario;
+}
+
+.card img, .cardFeatured img{
+  width: 68px;
+  height: 68px;
+  margin: 0 15px 0 0;
+}
+
+.cardHeader{
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px;
+  margin: 2px;
+}
+
+.cardText{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.cardTitle{
+  color: $colorPrimario;
+}
+
+.cardTags{
+  display: flex;
+  font-weight: 700;
+  align-items: center;
+  list-style: none;
+  padding: 0 0 5px 0;
+}
+
+.cardTags li{
+  margin: 3px;
+}
+
+.cardTags li:nth-child(2),
+.cardTags li:nth-child(3){
+  display: flex;
+  align-items: center;
+  color: white;
+  border-radius: 20px;
+  padding: 5px;
+  height: 10px;
+}
+
+.cardTags li:nth-child(2){
+  background: $colorPrimario;
+}
+
+.cardTags li:nth-child(3){
+  background: $colorSecundario;
+}
+
+.cardPositionTitle{
+  color: $colorSecundario;
+  font-weight: 700;
+  padding: 5px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.cardPositionTitle:hover{
+  cursor: pointer;
+  color: $colorPrimario;
+}
+
+.cardInfo{
+  display: flex;
+  padding: 5px;
+  list-style: disc;
+  font-weight: 700;
+  color: $fondoClaro;
+}
+
+.cardInfo li:first-child{
+  list-style: none;
+}
+
+.cardInfo li{
+  margin: 0 20px 0 0;
+}
+
+.cardFilters{
+  width: 45%;
+  display: flex;
+  padding: 5px;
+  margin: 2px;
+  justify-content: flex-end;
+  list-style: none;
+
+}
+
+.cardFilters li{
+  height: 20px;
+  margin: 2px;
+  padding: 5px;
+}
+
+.filter{
+  background: $FilterTablets;
+  border: none;
+  color: $colorPrimario;
+  font-weight: 700;
+  padding: 5px;
+  border-radius: 4px;
+
+}
+
+.filter:hover{
+  cursor: pointer;
+  background: $colorPrimario;
+  color: #ffff  ;
+}
+
+//------------------------------------ MAX-WIDTH 900px ----------------------------------------------
+
+
+@media (max-width: 900px) {
+
+  .navFilters{
+    justify-content: center;
+    width: 90%;
+  }
+
+  .navFilters ul{
+    width: 70%;
+    min-height: 65px;
+    align-content: space-between;
+    padding: 10px 10px 10px 20px;
+  }
+
+  .clear{
+    padding: 10px 20px 10px 10px;
+  }
+
+
+  .cardContainer, .cardContainerWithFilters{
+    width: 90%;
+
+  }
+
+  .cardContainerWithFilters{
+    margin: 100px 0;
+  }
+
+  .card, .cardFeatured{
+    flex-direction: column;
+    position: relative;
+    margin: 0 0 25px 0;
+    padding: 10px;
+  }
+
+  .cardHeader{
+    width: 90%;
+    margin: 30px 4px 0;
+  }
+
+  .card img, .cardFeatured img{
+    width: 55px;
+    height: 50px;
+    margin: 0 10px 0 0;
+    position: absolute;
+    top: -15px;
+  }
+
+  hr{
+    width: 90%;
+    margin: 10px 0;
+    border: 1px solid rgb(180, 180, 180);
+    display: block;
+  }
+
+  .cardFilters{
+    width: 90%;
+    min-height: 56px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  .cardFilters li{
+    margin: 0 10px 0 0;
+    padding: 0;
+
+  }
+
+}
