@@ -34,7 +34,12 @@ header{
   height: 100px;
   position: relative;
   // background-image:url(banner.png);
+}
+
+header img{
+  width: 100%;
   overflow: hidden;
+
 }
 
 .navFilters{
