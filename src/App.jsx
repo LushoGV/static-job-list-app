@@ -1,6 +1,6 @@
 import './App.scss'
 import ListCards from './components/ListCards'
-import NavFilters from './components/navFilters'
+import NavFilters from './components/NavFilters'
 import { useFilterContext } from './context/FilterContext'
 
 const App = () =>{
