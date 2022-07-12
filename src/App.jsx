@@ -10,6 +10,7 @@ const App = () =>{
   return (
         <div className="App">
             <header>
+              <img src="banner.png" alt="" />
               {filters != null && <NavFilters/>}
             </header>
             <main>

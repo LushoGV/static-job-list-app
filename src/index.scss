@@ -33,8 +33,11 @@ main, header{
 header{
   height: 100px;
   position: relative;
-  background-image:url(banner.png);
+  // background-image:url(banner.png);
+  overflow: hidden;
 }
+
+
 
 .navFilters{
   max-width: 1000px;
