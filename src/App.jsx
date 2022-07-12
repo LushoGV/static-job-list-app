@@ -2,6 +2,7 @@ import './App.scss'
 import ListCards from './components/ListCards'
 import NavFilters from './components/NavFilters'
 import { useFilterContext } from './context/FilterContext'
+import banner from '../banner.png'
 
 const App = () =>{
 
@@ -10,7 +11,7 @@ const App = () =>{
   return (
         <div className="App">
             <header>
-              <img src="banner.png" alt="" />
+              <img src={banner} alt="" />
               {filters != null && <NavFilters/>}
             </header>
             <main>
