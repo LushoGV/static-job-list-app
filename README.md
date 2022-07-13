@@ -16,5 +16,8 @@ Job listings with filtering - [Frontend Mentor](https://www.frontendmentor.io/ch
 
 ---
 
+**[DEMO](https://static-job-list-app.vercel.app/)**
+
+
 
 
